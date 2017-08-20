@@ -1,16 +1,43 @@
 /**
  * Created by pcsaini on 18/8/17.
  */
-/*var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-});*/
+$(document).ready(function () {
+    $(document).on("scroll", onScroll);
 
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+
+        $('a').each(function () {
+            $(this).removeClass('active');
+        });
+        $(this).addClass('active');
+
+        var target = this.hash;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top+2
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
+    });
+});
+function onScroll(event){
+    var scrollPosition = $(document).scrollTop();
+    $('ul.nav a').each(function () {
+        var currentLink = $(this);
+        var refElement = $(currentLink.attr("href"));
+        if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+            $('ul.nav li').removeClass("active");
+            currentLink.addClass("active");
+            console.log(refElement);
+        }
+        else{
+            currentLink.removeClass("active");
+        }
+    });
+}
 
 $(function() {
     var owl = $('.owl-carousel').owlCarousel({
@@ -56,4 +83,20 @@ $(function() {
             $(_owl).find('.item').each(owlAnimateFilter);
         });
     })
-})
+});
+
+function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(23.157749, 72.669928),
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.HYBRID,
+
+}
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var marker = new google.maps.Marker({
+        position: mapOptions.center,
+        map: map
+    });
+
+}
+

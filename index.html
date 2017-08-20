@@ -15,7 +15,7 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<header>
+<section id="header">
     <div class="navbar navbar-inverse navbar-fixed-top navbar-trans" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -29,7 +29,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a class="active" href="#header">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#about">About</a></li>
@@ -48,7 +48,7 @@
             </a>
         </div>
     </div>
-</header>
+</section>
 <section id="services">
     <div class="skills">
         <div class="container">
@@ -649,6 +649,38 @@
     <h3>Want to hear more story, subscribe for our newsletter</h3>
     <div class="subscribe"><a class="btn-style-2">Subscribe</a></div>
 </section>
+<section id="contact">
+    <div class="container">
+        <h1 class="title">
+            Contact Us
+        </h1>
+        <div class="line"></div>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+        </p>
+        <div class="contact">
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="Your name here">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="email" placeholder="Your email here">
+                    </div>
+                    <br>
+                    <div class="col-lg-12">
+                        <textarea placeholder="Your message here"></textarea>
+                    </div>
+                    <div class="submit"><a class="btn-style-2" type="submit">Subscribe</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section id="map"></section>
+<section id="footer">
+    <p>&copy; 2017 <a href="https://www.pcsaini.in">pcsaini</a> All Right Reserved</p>
+</section>
 
 
 
@@ -657,5 +689,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.owl-filter.js"></script>
     <script src="js/main.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFyNe0tvtDd5JJI4euKXrtWzk9-RHz8EE&callback=myMap"></script>
 </body>
 </html>
